@@ -2,7 +2,6 @@ import { redirect } from "@sveltejs/kit"
 import type { PageServerLoad } from "./$types"
 
 export  const load:PageServerLoad = async({ fetch, url  }) => {
-    await new Promise(resolve => setTimeout(resolve, 1000))
 const ref = url.pathname.split("/account/")
 const id = ref[1]
 const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
